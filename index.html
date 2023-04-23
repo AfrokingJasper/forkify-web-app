@@ -30,19 +30,54 @@
         </form>
 
         <div
-          class="hidden md:flex flex-row items-center justify-between space-x-1 text-sm md:text-md lg:text-xl md:space-x-2 font-bold h-16"
+          class="hidden md:flex flex-row items-center justify-between space-x-1 text-sm md:text-md lg:text-lg md:space-x-2 font-bold h-16"
         >
-          <div class="hover:bg-gray-400 h-full flex items-center duration-500">
+          <div
+            class="hover:bg-gray-400 h-full flex items-center duration-500 px-2"
+          >
             <svg class="nav__icon h-7 w-7 fill-green-700">
               <use href="img/icons.svg#icon-edit "></use>
             </svg>
             <h3>ADD RECIPE</h3>
           </div>
-          <div class="hover:bg-gray-400 h-full flex items-center duration-500">
-            <svg class="nav__icon h-7 w-7 fill-green-700">
-              <use href="img/icons.svg#icon-bookmark"></use>
-            </svg>
-            <h3>BOOKMARKS</h3>
+          <div class="relative group h-full">
+            <div
+              class="hover:bg-gray-400 h-full flex items-center transition-all duration-500 group px-2"
+            >
+              <svg class="nav__icon h-7 w-7 fill-green-700">
+                <use href="img/icons.svg#icon-bookmark"></use>
+              </svg>
+              <h3 class="group-hover:text-white transition-all duration-500">
+                BOOKMARKS
+              </h3>
+            </div>
+            <ul
+              class="flex-col space-y-5 hidden group-hover:flex hover:flex bg-green-50 mt-10 absolute p-2 hover:scale-105 duration-300 -mb-24 md:w-72 md:-ml-40 lg:w-80 lg:-ml-44"
+            >
+              <!-- item 1 -->
+              <li>
+                <a href="#" class="flex items-center justify-between">
+                  <div class="flex items-center justify-center space-x-3">
+                    <img
+                      src="img/maria.jpg"
+                      alt=""
+                      class="w-16 h-16 rounded-full"
+                    />
+                    <div>
+                      <h3 class="text-md text-green-700 uppercase line-clamp-1">
+                        spring pasta
+                      </h3>
+                      <p class="uppercase text-sm text-black">bbc foods</p>
+                    </div>
+                  </div>
+                  <div class="preview__user-generated mr-7">
+                    <svg class="w-6 h-6">
+                      <use href="img/icons.svg#icon-user"></use>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -66,21 +101,49 @@
             class="flex flex-col items-center justify-center w-full space-y-10 font-bold text-white rounded-sm mt-10"
           >
             <div class="flex flex-row justify-between w-full text-">
-              <div
-                class="hover:bg-gray-400 h-full flex items-center duration-500"
-              >
+              <div class="h-full flex items-center duration-500">
                 <svg class="nav__icon h-7 w-7 fill-green-700">
                   <use href="img/icons.svg#icon-edit "></use>
                 </svg>
                 <h3>ADD RECIPE</h3>
               </div>
-              <div
-                class="hover:bg-gray-400 h-full flex items-center duration-500"
-              >
-                <svg class="nav__icon h-7 w-7 fill-green-700">
-                  <use href="img/icons.svg#icon-bookmark"></use>
-                </svg>
-                <h3>BOOKMARKS</h3>
+
+              <!-- bookmark -->
+              <div class="group">
+                <div class="h-full flex items-center duration-500">
+                  <svg class="nav__icon h-7 w-7 fill-green-700">
+                    <use href="img/icons.svg#icon-bookmark"></use>
+                  </svg>
+                  <h3>BOOKMARKS</h3>
+                </div>
+
+                <ul
+                  class="flex-col space-y-5 hidden group-hover:flex bg-green-50 mt-10 absolute p-2 hover:scale-105 duration-300 -mb-[100%] w-96 -ml-72"
+                >
+                  <!-- item 1 -->
+                  <li>
+                    <a href="#" class="flex items-center justify-between">
+                      <div class="flex items-center justify-center space-x-3">
+                        <img
+                          src="img/maria.jpg"
+                          alt=""
+                          class="w-16 h-16 rounded-full"
+                        />
+                        <div>
+                          <h3 class="text-md text-green-700 uppercase">
+                            spring pasta
+                          </h3>
+                          <p class="uppercase text-sm text-black">bbc foods</p>
+                        </div>
+                      </div>
+                      <div class="preview__user-generated mr-10">
+                        <svg class="w-6 h-6">
+                          <use href="img/icons.svg#icon-user"></use>
+                        </svg>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -100,285 +163,33 @@
           </div>
 
           <!-- recipe list display -->
-          <div class="bg-white h-[80%] mt-5 fle p-2 overflow-scroll">
+          <div class="bg-white h-[80%] mt-5 fle p-">
             <ul
-              class="flex flex-col w-full space-y-3 z-10 h-[90%] overflow-scroll"
+              class="flex flex-col w-full space-y-3 z-10 h-[90%] overflow-y-scroll"
             >
-              <!-- items 1 -->
+              <!-- item 1 -->
               <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
+                <a
+                  href="#"
+                  class="flex items-center justify-between hover:scale-105 p-2 duration-700"
+                >
+                  <div class="flex items-center justify-center space-x-3">
+                    <img
+                      src="img/maria.jpg"
+                      alt=""
+                      class="w-16 h-16 rounded-full"
+                    />
+                    <div>
+                      <h3 class="text-md text-green-700 uppercase">
+                        spring pasta
+                      </h3>
+                      <p class="uppercase text-sm text-black">bbc foods</p>
+                    </div>
                   </div>
-                </a>
-              </li>
-
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
-                  </div>
-                </a>
-              </li>
-              <!-- items 1 -->
-              <li>
-                <a href="#" class="flex items-center space-x-3">
-                  <img
-                    src="img/maria.jpg"
-                    alt=""
-                    class="w-16 h-16 rounded-full"
-                  />
-                  <div>
-                    <h3 class="text-md text-green-700 uppercase">
-                      spring pasta
-                    </h3>
-                    <p class="uppercase text-sm">bbc foods</p>
+                  <div class="preview__user-generated mr-10">
+                    <svg class="w-6 h-6">
+                      <use href="img/icons.svg#icon-user"></use>
+                    </svg>
                   </div>
                 </a>
               </li>
