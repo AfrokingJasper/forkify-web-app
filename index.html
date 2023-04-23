@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Simple Tailwind starter</title>
+  </head>
+  <body
+    class="body min-h-screen bg-gradient-to-br from-green-300 to-green-700 md:p-5"
+  >
+    <div class="container mx-auto h-full bg-red-600 rounded-lg h-screen">
+      <header
+        class="p-4 flex flex-row items-center justify-between bg-blue-700"
+      >
+        <img src="img/logo.png" alt="" class="h-10 lg:h-14" />
+
+        <form action="" class="hidden md:flex">
+          <input
+            type="text"
+            class="text-xl p-2 rounded-full border-2 border-gray-300 focus:outline-none"
+          />
+          <button
+            class="text-lg md:text-xl text-white font-bold bg-green-600 py-3 px-6 rounded-full -ml-10 hover:scale-105 duration-500"
+          >
+            Search
+          </button>
+        </form>
+
+        <div
+          class="hidden md:flex flex-row items-center justify-between space-x-1 text-sm md:text-md lg:text-xl md:space-x-2 font-bold h-16"
+        >
+          <div class="hover:bg-gray-400 h-full flex items-center duration-500">
+            <svg class="nav__icon h-7 w-7 fill-green-700">
+              <use href="img/icons.svg#icon-edit "></use>
+            </svg>
+            <h3>ADD RECIPE</h3>
+          </div>
+          <div class="hover:bg-gray-400 h-full flex items-center duration-500">
+            <svg class="nav__icon h-7 w-7 fill-green-700">
+              <use href="img/icons.svg#icon-bookmark"></use>
+            </svg>
+            <h3>ADD RECIPE</h3>
+          </div>
+        </div>
+
+        <!-- hamburger menu -->
+        <button
+          id="menu-btn"
+          class="hamburger block fixed focus:outline-none md:hidden z-30 transition-opacity duration-300"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+
+        <!-- mobile menu -->
+
+        <div
+          id="menu"
+          class="hidden fixed p-6 bg-gray-800 inset-0 h-0 w-full z-20 backdrop-blur-sm transition-all duration-300 bg-opacity-90"
+        >
+          <div
+            class="z-20 flex flex-col items-center justify-center w-full space-y-10 font-bold text-white rounded-sm mt-20"
+          >
+            <a
+              href="#features"
+              class="z-20 nav-link transition-opacity duration-300 w-full text-center"
+              >Features</a
+            >
+            <a
+              href="#operations"
+              class="z-20 nav-link transition-opacity duration-300 w-full text-center"
+              >Operations</a
+            >
+            <a
+              href="#testimonials"
+              class="z-20 nav-link transition-opacity duration-300 w-full text-center"
+              >testimonials</a
+            >
+            <a
+              href="#"
+              class="transition-opacity duration-300 w-full text-center pt-6 border-t border-gray-200"
+              >Login</a
+            >
+            <a
+              href=""
+              class="transition-opacity duration-300 btn openmodal text-center bg-primary py-3.5 px-5 rounded-full"
+              >Open account</a
+            >
+          </div>
+        </div>
+      </header>
+    </div>
+  </body>
+</html>
