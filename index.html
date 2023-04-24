@@ -9,13 +9,13 @@
     <title>Simple Tailwind starter</title>
   </head>
   <body
-    class="body min-h-screen bg-gradient-to-br from-green-300 to-green-700 md:p-10 md:pb-20"
+    class="body min-h-scree bg-gradient-to-br from-green-300 to-green-700 pt-5 md:p-10 md:pb-20"
   >
     <div
-      class="container mx-auto bg-red-600 rounded-lg h-screen overflow-hidden"
+      class="container mx-auto bg-red-500 rounded-lg min-h-screen overflow-hidden"
     >
       <header
-        class="p-4 flex flex-row items-center justify-between bg-blue-700"
+        class="p-4 flex flex-row items-center justify-between bg-green-100"
       >
         <img src="img/logo.png" alt="" class="h-10 lg:h-14" />
 
@@ -54,7 +54,7 @@
               </h3>
             </div>
             <ul
-              class="flex-col space-y-5 hidden group-hover:flex hover:flex bg-green-50 mt-10 absolute p-2 hover:scale-105 duration-300 -mb-24 md:w-72 md:-ml-40 lg:w-80 lg:-ml-44"
+              class="flex-col z-10 space-y-5 hidden group-hover:flex hover:flex bg-white mt-10 absolute p-2 hover:scale-105 duration-300 -mb-24 md:w-72 md:-ml-40 lg:w-80 lg:-ml-44"
             >
               <!-- item 1 -->
               <li>
@@ -166,7 +166,7 @@
             </form>
           </div>
 
-          <!-- recipe list display -->
+          <!-- recipe list display mobile -->
           <div class="bg-white h-[80%] mt-5 flex flex-col p-">
             <ul
               class="flex flex-col w-full space-y-3 z-10 h-[90%] overflow-y-scroll overflow-x-hidden"
@@ -201,17 +201,17 @@
               </li>
             </ul>
 
-            <!-- pagination -->
+            <!-- pagination mobile-->
             <div
-              class="w-full bg-red-200 flex justify-between items-center px-10"
+              class="w-full bg-red-200 flex justify-between items-center px-5"
             >
               <button
-                class="py-1 px-3 rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200"
+                class="py-1 px-3 rounded-full text-white bg-green-400 font-bold active:bg-green-500 duration-200"
               >
                 &larr; Page <span>1</span>
               </button>
               <button
-                class="py-1 px-3 rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200"
+                class="py-1 px-3 rounded-full text-white bg-green-400 font-bold active:bg-green-500 duration-200"
               >
                 Page <span>2</span> &rarr;
               </button>
@@ -222,9 +222,9 @@
 
       <!-- main body section -->
 
-      <div class="flex bg-green-700 h-[90%] pt-5">
+      <div class="flex bg-green-700 min-h-screen pt-5">
         <!-- list display -->
-        <div class="w-1/3 h-full bg-green-50 hidden md:flex flex-col">
+        <div class="w-1/3 min-h-screen bg-white hidden md:flex flex-col">
           <ul
             class="flex flex-col w-full space-y-3 h-[90%] overflow-y-scroll pt-3 px-3"
           >
@@ -287,9 +287,7 @@
           </ul>
 
           <!-- pagination -->
-          <div
-            class="w-full bg-red-200 flex justify-between items-center px-10"
-          >
+          <div class="w-full flex justify-between items-center lg:px-10">
             <button
               class="py-1 px-3 rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200"
             >
@@ -302,7 +300,94 @@
             </button>
           </div>
         </div>
-        <div class="w-full h-full bg-green-100 md:w-2/3"></div>
+
+        <!-- recipe display -->
+        <div class="w-full min-h-screen bg-green-50 md:w-2/3 overflow-scroll">
+          <!-- image section -->
+          <div class="bg-yellow- h-[70%]">
+            <div
+              class="flex bg-center bg-cover h-[70%] bg-no-repeat bg-[url('/img/maria.jpg')] relative"
+            >
+              <div
+                class="h-full w-full opacity-25 bg-gradient-to-tr from-orange-50 to-orange-500"
+              ></div>
+              <div
+                class="absolute bottom-3 max-w-xs h-32 flex items-center justify-center text-4xl text-black"
+              >
+                <p class="">hello hh ya idu iui</p>
+              </div>
+            </div>
+
+            <!-- time, servings and bookmark icon -->
+            <div class="flex flex-row items-center justify-around h-[30%]">
+              <!-- time ad servings -->
+              <div class="flex justify-between space-x-3">
+                <div class="flex items-center space-x-2 p-1">
+                  <svg
+                    class="recipe__info-icon h-4 w-4 md:h-6 md:w-6 fill-green-700"
+                  >
+                    <use href="img/icons.svg#icon-clock"></use>
+                  </svg>
+                  <p class="uppercase text-xs md:text-sm">
+                    <span class="font-bold">75</span> minutes
+                  </p>
+                </div>
+
+                <!-- servings -->
+                <div
+                  class="flex flex-col md:flex-row space-y-2 items-center md:space-y-0 md:space-x-2 p-1"
+                >
+                  <div class="flex space-x-2">
+                    <svg
+                      class="recipe__info-icon h-4 w-4 md:h-6 md:w-6 fill-green-700"
+                    >
+                      <use href="img/icons.svg#icon-users"></use>
+                    </svg>
+                    <p class="uppercase text-xs md:text-sm">
+                      <span class="font-bold">75</span> minutes
+                    </p>
+                  </div>
+                  <div class="flex space-x-2">
+                    <button>
+                      <svg
+                        class="recipe__info-icon h-4 w-4 md:h-6 md:w-6 fill-green-700"
+                      >
+                        <use href="img/icons.svg#icon-minus-circle"></use>
+                      </svg>
+                    </button>
+                    <button>
+                      <svg
+                        class="recipe__info-icon h-4 w-4 md:h-6 md:w-6 fill-green-700"
+                      >
+                        <use href="img/icons.svg#icon-plus-circle"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- bookmark -->
+              <div class="flex items-center space-x-2 p-1">
+                <button>
+                  <svg
+                    class="recipe__info-icon h-4 w-4 md:h-6 md:w-6 fill-green-700"
+                  >
+                    <use href="img/icons.svg#icon-user"></use>
+                  </svg>
+                </button>
+                <button>
+                  <svg
+                    class="recipe__info-icon h-4 w-4 md:h-6 md:w-6 fill-green-700"
+                  >
+                    <use href="img/icons.svg#icon-bookmark-fill"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-blue-500 h-[50%]">hi</div>
+          <div class="h-[40%]">holla</div>
+        </div>
       </div>
     </div>
   </body>
