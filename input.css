@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.span {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 .recipe-title {
   position: absolute;
   bottom: 0;
