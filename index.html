@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js" defer></script>
+    <script defers src="js/script.js" type="module"></script>
     <title>Simple Tailwind starter</title>
   </head>
   <body
-    class="body min-h-scree bg-gradient-to-br from-green-300 to-green-700 pt-5 md:p-10 md:pb-20"
+    class="body min-h-scree bg-gradient-to-br from-green-300 to-green-700 pt- md:p-10 md:pb-20"
   >
     <div class="container mx-auto rounded-lg min-h-screen overflow-hidden">
       <header
@@ -54,7 +54,7 @@
             <ul
               class="flex-col z-10 space-y-5 hidden group-hover:flex hover:flex bg-white mt-10 absolute p-2 hover:scale-105 duration-300 -mb-24 md:w-72 md:-ml-40 lg:w-80 lg:-ml-44"
             >
-              <!-- item 1 -->
+              <!-- item 1
               <li>
                 <a href="#" class="flex items-center justify-between">
                   <div class="flex items-center justify-center space-x-3">
@@ -76,7 +76,7 @@
                     </svg>
                   </div>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -121,7 +121,7 @@
                   class="flex-col space-y-5 hidden group-hover:flex bg-green-50 mt-10 absolute p-2 hover:scale-105 duration-300 -mb-[100%] max-w-72 -ml-36"
                 >
                   <!-- item 1 -->
-                  <li>
+                  <!-- <li>
                     <a href="#" class="flex items-center justify-between">
                       <div class="flex items-center justify-center space-x-3">
                         <img
@@ -144,7 +144,7 @@
                         </svg>
                       </div>
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -178,7 +178,7 @@
                 </svg>
               </div> -->
               <!-- item 1 -->
-              <li class="hidden">
+              <!-- <li class="hidden">
                 <a
                   href="#"
                   class="flex items-center justify-between hover:scale-105 p-2 duration-700"
@@ -204,7 +204,7 @@
                     </svg>
                   </div>
                 </a>
-              </li>
+              </li> -->
             </ul>
 
             <!-- pagination mobile-->
@@ -232,6 +232,8 @@
           <ul
             class="flex flex-col w-full space-y-3 h-[90%] overflow-y-scroll pt-3 px-3"
           >
+            <a href="#5ed6604591c37cdc054bcd45">Recipe1</a>
+            <a href="#5ed6604591c37cdc054bcc54">Recipe2</a>
             <!-- spinner -->
             <!-- <div
               class="spinner mx-auto max-w-xs items-center flex justify-center animate-spin"
@@ -241,7 +243,7 @@
               </svg>
             </div> -->
             <!-- item 1 -->
-            <li class="">
+            <!-- <li class="">
               <a
                 href="#"
                 class="flex items-center justify-between hover:scale-105 hover:bg-green-100 p-2 duration-700"
@@ -267,9 +269,9 @@
                   </svg>
                 </div>
               </a>
-            </li>
+            </li> -->
             <!-- item 2 -->
-            <li class="">
+            <!-- <li class="">
               <a
                 href="#"
                 class="flex items-center justify-between hover:scale-105 hover:bg-green-100 p-2 duration-700"
@@ -295,12 +297,12 @@
                   </svg>
                 </div>
               </a>
-            </li>
+            </li> -->
           </ul>
 
           <!-- pagination -->
           <div class="w-full flex justify-between items-center lg:px-10">
-            <button
+            <!-- <button
               class="py-1 px-3 rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200"
             >
               &larr; Page <span>1</span>
@@ -309,167 +311,23 @@
               class="py-1 px-3 rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200"
             >
               Page <span>2</span> &rarr;
-            </button>
+            </button> -->
           </div>
         </div>
 
         <!-- recipe display -->
-        <div class="w-full min-h-screen bg-green-50 md:w-2/3 overflow-scroll">
-          <!-- spinner
+        <div
+          class="w-full min-h-screen bg-green-50 md:w-2/3 overflow-scroll recipe"
+        >
           <div
-            class="spinner mx-auto max-w-xs items-center flex justify-center animate-spin"
+            class="message flex space-x-2 items-center mt-10 mx-auto max-w-xs px-2 md:max-w-sm"
           >
-            <svg class="fill-green-400 w-20">
-              <use href="img/icons.svg#icon-loader"></use>
-            </svg>
-          </div> -->
-          <!-- image section -->
-          <div class="bg-yellow- h-[50%] md:h-[70%]">
-            <div
-              class="flex bg-center bg-cover h-[70%] bg-no-repeat bg-[url('https://images.unsplash.com/photo-1611270629569-8b357cb88da9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] relative"
-            >
-              <div
-                class="h-full w-full opacity-25 bg-gradient-to-tr from-orange-50 to-orange-500"
-              ></div>
-              <!-- <div class="relative w-1/2 text-white text-center"> -->
-              <h1
-                class="absolute bottom-0 text-center left-[50%] transform -translate-x-20 -skew-y-6 font-bold text-3xl uppercase max-w-xs lg:leading-loose md:-translate-x-36 items-centr"
-              >
-                <span
-                  class="bg-gradient-to-r from-green-400 to-green-600 py-1 px-2 md:py-2 md:px-4 lg:py-5 lg:px-8 md:leading-tight span text-xl md:text-2xl lg:text-3xl rounded-xl"
-                >
-                  pasta carbonara
-                </span>
-              </h1>
+            <div class="">
+              <svg class="h-10 w-10 fill-green-600">
+                <use href="img/icons.svg#icon-smile"></use>
+              </svg>
             </div>
-
-            <!-- time, servings and bookmark icon -->
-            <div class="flex flex-row items-center justify-around h-[30%]">
-              <!-- time ad servings -->
-              <div class="flex justify-between space-x-3">
-                <div class="flex items-center space-x-2 p-1">
-                  <svg
-                    class="recipe__info-icon h-5 w-5 md:h-6 md:w-6 fill-green-700"
-                  >
-                    <use href="img/icons.svg#icon-clock"></use>
-                  </svg>
-                  <p class="uppercase text-sm md:text-md">
-                    <span class="font-bold">75</span> minutes
-                  </p>
-                </div>
-
-                <!-- servings -->
-                <div
-                  class="flex flex-col md:flex-row space-y-2 items-center md:space-y-0 md:space-x-2 p-1"
-                >
-                  <div class="flex space-x-2">
-                    <svg
-                      class="recipe__info-icon h-5 w-5 md:h-6 md:w-6 fill-green-700"
-                    >
-                      <use href="img/icons.svg#icon-users"></use>
-                    </svg>
-                    <p class="uppercase text-sm text:text-md">
-                      <span class="font-bold">75</span> servings
-                    </p>
-                  </div>
-                  <div class="flex space-x-2">
-                    <button>
-                      <svg
-                        class="recipe__info-icon h-5 w-5 md:h-6 md:w-6 fill-green-700"
-                      >
-                        <use href="img/icons.svg#icon-minus-circle"></use>
-                      </svg>
-                    </button>
-                    <button>
-                      <svg
-                        class="recipe__info-icon h-5 w-5 md:h-6 md:w-6 fill-green-700"
-                      >
-                        <use href="img/icons.svg#icon-plus-circle"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- bookmark -->
-              <div class="flex items-center space-x-2 p-1">
-                <button>
-                  <svg
-                    class="recipe__info-icon h-5 w-5 md:h-6 md:w-6 fill-green-700"
-                  >
-                    <use href="img/icons.svg#icon-user"></use>
-                  </svg>
-                </button>
-                <button class="bg-green-500 p-2 rounded-full">
-                  <svg
-                    class="recipe__info-icon h-5 w-5 md:h-6 md:w-6 stroke-white fill-green-500"
-                  >
-                    <use href="img/icons.svg#icon-bookmark-fill"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-gray-200 flex flex-col items-center py-5 h-[5">
-            <h3 class="uppercase text-md md:text-xl font-bold text-green-500">
-              Recipe ingredients
-            </h3>
-
-            <ul
-              class="items-center justify-center lg:px-16 grid grid-cols-2 w-full gap-4"
-            >
-              <!-- item 1 -->
-              <li class="flex space-x-2 justify-start items-start">
-                <div>
-                  <svg class="recipe__icon h-5 w-5 fill-green-600 flex-auto">
-                    <use href="img/icons.svg#icon-check"></use>
-                  </svg>
-                </div>
-                <div>
-                  0.5
-                  <span class="recipe-unit"
-                    >big handfuls of sliced asparagus and/or pea shoots or tiny
-                    broccoli trees or shredded greens
-                  </span>
-                  - anything quick cooking and fresh
-                </div>
-              </li>
-              <!-- item 2 -->
-              <li class="flex space-x-2 justify-start items-start">
-                <div>
-                  <svg class="recipe__icon h-5 w-5 fill-green-600 flex-auto">
-                    <use href="img/icons.svg#icon-check"></use>
-                  </svg>
-                </div>
-                <div>
-                  0.5
-                  <span class="recipe-unit"
-                    >big handfuls of sliced asparagus and/or pea shoots or tiny
-                    broccoli trees or shredded greens
-                  </span>
-                  - anything quick cooking and fresh
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex flex-col items-center py-10 px-2 space-y-5 max-w-xl mx-auto"
-          >
-            <h2 class="uppercase text-md md:text-xl font-bold text-green-600">
-              How to cook it
-            </h2>
-
-            <p class="text-center">
-              This recipe was carefully designed and tested by
-              <span class="font-bold">101 Cookbooks.</span> Please check out
-              directions at their website.
-            </p>
-
-            <button
-              class="py-1 px-3 rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200 uppercase"
-            >
-              directions &rarr;
-            </button>
+            <p>Start by searching for a recipe or an ingredient. Have fun!</p>
           </div>
         </div>
       </div>
