@@ -1,5 +1,7 @@
+import { async } from "regenerator-runtime";
 import * as model from "./model.js";
 import recipeView from "./views/recipeView.js";
+import searchView from "./views/searchView.js";
 
 // forkify web app clone 251 to be attended to
 
@@ -17,19 +19,12 @@ menuBtn.addEventListener("click", function (e) {
   menu.classList.toggle("h-0");
 });
 
-const recipeContainer = document.querySelector(".recipe");
-
-// console.log(recipeContainer);
-// console.log("text");
-
-// https://forkify-api.herokuapp.com/v2
-
 ///////////////////////////////////////
 
 const conreolRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
-    console.log(id);
+    // console.log(id);
 
     if (!id) return;
 
@@ -45,9 +40,40 @@ const conreolRecipes = async function () {
   }
 };
 
+const controlSearchResults = async function () {
+  try {
+    const query = searchView.getQuery();
+
+    if (!query) return;
+
+    await model.loadSearchResults(query);
+    console.log(model.state.search.results);
+  } catch (err) {
+    console.error(err);
+  }
+};
+const controlSearchResults2 = async function () {
+  try {
+    // 1) get search query
+    const query = searchView.getQuery2();
+
+    if (!query) return;
+
+    // 2) load search results
+    await model.loadSearchResults(query);
+
+    // 3) render results
+    console.log(model.state.search.results);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 // listening for hash events
 
 const init = function () {
   recipeView.addHandlerRender(conreolRecipes);
+  searchView.addHandlerSearch(controlSearchResults);
+  searchView.addHandlerSearch2(controlSearchResults2);
 };
 init();
