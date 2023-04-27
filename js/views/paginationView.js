@@ -4,6 +4,16 @@ import icons from "url:../../img/icons.svg";
 class PaginationView extends View {
   _parentElement = document.querySelector(".pagination-mid");
 
+  addHandlerClick(handler) {
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".py-1");
+      if (!btn) return;
+      const gotoPage = +btn.dataset.goto;
+      // console.log(gotoPage);
+      handler(gotoPage);
+    });
+  }
+
   _generateMarkup() {
     const curPage = this._data.page;
     const numPages = Math.ceil(
@@ -13,7 +23,9 @@ class PaginationView extends View {
     // page 1 and there are other pages
     if (curPage === 1 && numPages > 1) {
       return `
-      <button class="py-1 px-3 rounded-full text-white  mr-7 bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200">
+      <button data-goto="${
+        curPage + 1
+      }" class="py-1 px-3 page-btn rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200">
          Page <span>${curPage + 1}</span> &rarr;
       </button>
       `;
@@ -21,7 +33,9 @@ class PaginationView extends View {
     // last page
     if (curPage === numPages && numPages > 1) {
       return `
-      <button class="py-1 px-3 rounded-full text-white mr-7 bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200">
+      <button data-goto="${
+        curPage - 1
+      }" class="py-1 px-3 page-btn rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200">
         &larr; Page <span>${curPage - 1}</span>
       </button>
       `;
@@ -29,10 +43,14 @@ class PaginationView extends View {
     // some other page
     if (curPage < numPages) {
       return `
-      <button class="py-1 px-3 rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200">
+      <button data-goto="${
+        curPage - 1
+      }" class="py-1 px-3 rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200">
           &larr; Page <span>${curPage - 1}</span>
       </button>
-      <button class="py-1 px-3 rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200">
+      <button data-goto="${
+        curPage + 1
+      }" class="py-1 px-3 rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200">
          Page <span>${curPage + 1}</span> &rarr;
       </button>
       `;

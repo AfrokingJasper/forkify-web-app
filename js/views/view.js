@@ -23,10 +23,13 @@ export default class View {
     this._data = data;
 
     const markUp = document.createElement("div");
-    markUp.classList.add("h-full");
-    markUp.classList.add("w-full");
-    markUp.classList.add("flex");
-    markUp.classList.add("justify-between");
+    markUp.classList.add(
+      "h-full",
+      "w-full",
+      "flex",
+      "justify-center",
+      "space-x-3"
+    );
     markUp.innerHTML = this._generateMarkup();
     this._clear();
     this._parentElement.insertAdjacentElement("afterbegin", markUp);

@@ -59,7 +59,7 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query);
 
     // 3) render results
-    resultsView.render(model.getSearchResultsPage(2));
+    resultsView.render(model.getSearchResultsPage(3));
 
     // 4 render initial pagination buttons
     paginationView.renderPagination(model.state.search);
@@ -90,9 +90,34 @@ const controlSearchResults2 = async function () {
 
 // listening for hash events
 
+const controlPagination = function (gotoPage) {
+  // 1) render new results
+  resultsView.render(model.getSearchResultsPage(gotoPage));
+
+  // 2) render new pagination buttons
+  paginationView.renderPagination(model.state.search);
+  console.log(gotoPage);
+};
+const controlPaginationMobile = function (gotoPage) {
+  // 3) render new mobile results
+  resultsViewMobile.render(model.getSearchResultsPage(gotoPage));
+
+  // 4) render new movile pagination buttons
+  paginationViewMobile.renderPagination(model.state.search);
+};
+
+const controlServings = function () {
+  // updaterecie servings (in the state)
+  model.updateServings(6);
+
+  // update the recipe view
+};
+
 const init = function () {
   recipeView.addHandlerRender(conreolRecipes);
   searchView.addHandlerSearch(controlSearchResults);
   searchView.addHandlerSearch2(controlSearchResults2);
+  paginationView.addHandlerClick(controlPagination);
+  paginationViewMobile.addHandlerClick(controlPaginationMobile);
 };
 init();
