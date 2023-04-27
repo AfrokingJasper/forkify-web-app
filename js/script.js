@@ -4,15 +4,17 @@ import recipeView from "./views/recipeView.js";
 import searchView from "./views/searchView.js";
 import resultsView from "./views/resultsView.js";
 import resultsViewMobile from "./views/resultsViewMobile.js";
+import paginationView from "./views/paginationView.js";
+import paginationViewMobile from "./views/paginationViewMobile.js";
 
 // forkify web app clone 251 to be attended to
 
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 const menuBtn = document.querySelector("#menu-btn");
 const menu = document.querySelector("#menu");
@@ -49,12 +51,18 @@ const conreolRecipes = async function () {
 const controlSearchResults = async function () {
   try {
     resultsView.renderSpinner();
+    // 1) get search query
     const query = searchView.getQuery();
     if (!query) return;
 
+    // 2) load search results
     await model.loadSearchResults(query);
-    // console.log(model.state.search.results);
-    resultsView.render(model.state.search.results);
+
+    // 3) render results
+    resultsView.render(model.getSearchResultsPage(2));
+
+    // 4 render initial pagination buttons
+    paginationView.renderPagination(model.state.search);
   } catch (err) {
     console.error(err);
   }
@@ -71,8 +79,10 @@ const controlSearchResults2 = async function () {
     await model.loadSearchResults(query);
 
     // 3) render results
-    // console.log(model.state.search.results);
-    resultsViewMobile.render(model.state.search.results);
+    resultsViewMobile.render(model.getSearchResultsPage(2));
+
+    // 4) render initial pagination buttons
+    paginationViewMobile.renderPagination(model.state.search);
   } catch (err) {
     console.error(err);
   }

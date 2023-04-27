@@ -10,6 +10,23 @@ export default class View {
 
     const markUp = document.createElement("div");
     markUp.classList.add("h-full");
+    // markUp.classList.add("w-full");
+    markUp.innerHTML = this._generateMarkup();
+    this._clear();
+    this._parentElement.insertAdjacentElement("afterbegin", markUp);
+  }
+
+  renderPagination(data) {
+    if (!data || (Array.isArray(data) && data.length === 0))
+      return this.renderError();
+
+    this._data = data;
+
+    const markUp = document.createElement("div");
+    markUp.classList.add("h-full");
+    markUp.classList.add("w-full");
+    markUp.classList.add("flex");
+    markUp.classList.add("justify-between");
     markUp.innerHTML = this._generateMarkup();
     this._clear();
     this._parentElement.insertAdjacentElement("afterbegin", markUp);
