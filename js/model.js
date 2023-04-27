@@ -32,6 +32,7 @@ export const loadRecipe = async function (id) {
     // temporaty error handler
 
     console.error(`${err} 🛑🛑`);
+    throw err;
   }
 };
 

@@ -1,34 +1,34 @@
 class SearchView {
-  #parentEl = document.querySelector(".search1");
-  #parentEl2 = document.querySelector(".search2");
+  _parentEl = document.querySelector(".search1");
+  _parentEl2 = document.querySelector(".search2");
 
   getQuery() {
-    const query1 = this.#parentEl.querySelector(".search-input1").value;
-    this.#parentEl.querySelector(".search-input1").value = "";
+    const query1 = this._parentEl.querySelector(".search-input1").value;
+    this._parentEl.querySelector(".search-input1").value = "";
     return query1;
   }
   getQuery2() {
-    const query2 = this.#parentEl2.querySelector(".search-input2").value;
-    this.#parentEl2.querySelector(".search-input2").value = "";
+    const query2 = this._parentEl2.querySelector(".search-input2").value;
+    this._parentEl2.querySelector(".search-input2").value = "";
     return query2;
   }
 
-  // #clearInput(element, input) {
+  //_clearInput(element, input) {
   //   this.element.querySelector(input).value = "";
   // }
-  // #clearInput(element, input) {
+  //_clearInput(element, input) {
   //   this.element.querySelector(input).value = "";
   // }
 
   addHandlerSearch(handler) {
-    this.#parentEl.addEventListener("submit", function (e) {
+    this._parentEl.addEventListener("submit", function (e) {
       e.preventDefault();
       handler();
       // controlSearchResults();
     });
   }
   addHandlerSearch2(handler) {
-    this.#parentEl2.addEventListener("submit", function (e) {
+    this._parentEl2.addEventListener("submit", function (e) {
       e.preventDefault();
       handler();
       // controlSearchResults();

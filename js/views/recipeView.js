@@ -1,38 +1,14 @@
+import View from "./view.js";
+
 import icons from "url:../../img/icons.svg";
 // import Fraction from "fraction.js";
 var Fraction = require("fraction.js");
 // console.log(Fraction);
 
-class RecipeView {
-  #parentElement = document.querySelector(".recipe");
-  #data;
-
-  render(data) {
-    this.#data = data;
-
-    const markUp = document.createElement("div");
-    markUp.classList.add("h-full");
-    markUp.innerHTML = this.#generateMarkup();
-    this.#clear();
-    this.#parentElement.insertAdjacentElement("afterbegin", markUp);
-  }
-
-  #clear() {
-    this.#parentElement.innerHTML = "";
-  }
-
-  renderSpinner = function () {
-    const markUp = document.createElement("div");
-    markUp.innerHTML = `
-     <div class="spinner mx-auto max-w-xs items-center flex justify-center animate-spin">
-      <svg class="fill-green-400 w-20">
-        <use href="${icons}#icon-loader"></use>
-      </svg>
-    </div> 
-    `;
-    this.#parentElement.innerHTML = "";
-    this.#parentElement.insertAdjacentElement("afterbegin", markUp);
-  };
+class RecipeView extends View {
+  _parentElement = document.querySelector(".recipe");
+  _errorMessage = "we could not find that recipe! please try anothr recipe";
+  _message = "";
 
   addHandlerRender(handler) {
     ["hashchange", "load"].forEach((ev) =>
@@ -40,13 +16,13 @@ class RecipeView {
     );
   }
 
-  #generateMarkup() {
+  _generateMarkup() {
     return `
     <div class="bg-yellow- h-[50%] md:h-[70%]">
     <div class="flex h-[70%] relative">
     <div class="h-full w-full absolute bg-cover bg-center">
       <img
-        src="${this.#data.image}"
+        src="${this._data.image}"
         alt=""
         class="h-full w-full object-cover object-center"
       />
@@ -61,7 +37,7 @@ class RecipeView {
       <span
         class="bg-gradient-to-r from-green-400 to-green-600 py-1 px-2 md:py-2 md:px-4 lg:py-5 lg:px-8 md:leading-tight span text-xl md:text-2xl lg:text-3xl rounded-xl"
       >
-        ${this.#data.title}
+        ${this._data.title}
       </span>
     </h1>
   </div>
@@ -74,7 +50,7 @@ class RecipeView {
               <use href="${icons}#icon-clock"></use>
             </svg>
             <p class="uppercase text-sm md:text-md">
-              <span class="font-bold">${this.#data.cookingTime}</span> minutes
+              <span class="font-bold">${this._data.cookingTime}</span> minutes
             </p>
           </div>
      <div class="flex flex-col md:flex-row space-y-2 items-center md:space-y-0 md:space-x-2 p-1">
@@ -85,7 +61,7 @@ class RecipeView {
                 <use href="${icons}#icon-users"></use>
               </svg>
               <p class="uppercase text-sm text:text-md">
-                <span class="font-bold">${this.#data.servings}</span> servings
+                <span class="font-bold">${this._data.servings}</span> servings
               </p>
             </div> 
         <div class="flex space-x-2">
@@ -128,7 +104,7 @@ class RecipeView {
       <ul
         class="items-start justify-center px-2 lg:px-16 grid grid-cols-2 w-full "
       > 
-    ${this.#data.ingredients.map(this.#generateMarkupIngredients).join("")}
+    ${this._data.ingredients.map(this._generateMarkupIngredients).join("")}
       </ul>
     </div> 
      <div
@@ -140,12 +116,12 @@ class RecipeView {
 
       <p class="text-center">
         This recipe was carefully designed and tested by
-        <span class="font-bold">${this.#data.publisher}</span> Please check out
+        <span class="font-bold">${this._data.publisher}</span> Please check out
         directions at their website.
       </p>
       <a
       class=""
-      href="${this.#data.sourceUrl}"
+      href="${this._data.sourceUrl}"
       target="_blank"
     >
       <button
@@ -158,7 +134,7 @@ class RecipeView {
     `;
   }
 
-  #generateMarkupIngredients(ing) {
+  _generateMarkupIngredients(ing) {
     return `
   <li class="flex space-x-2 justify-start items-start mt-5">
     <div>
