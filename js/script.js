@@ -2,11 +2,17 @@ import { async } from "regenerator-runtime";
 import * as model from "./model.js";
 import recipeView from "./views/recipeView.js";
 import searchView from "./views/searchView.js";
+import resultsView from "./views/resultsView.js";
+import resultsViewMobile from "./views/resultsViewMobile.js";
 
 // forkify web app clone 251 to be attended to
 
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+
+if (module.hot) {
+  module.hot.accept();
+}
 
 const menuBtn = document.querySelector("#menu-btn");
 const menu = document.querySelector("#menu");
@@ -18,7 +24,6 @@ menuBtn.addEventListener("click", function (e) {
   menu.classList.toggle("hidden");
   menu.classList.toggle("h-0");
 });
-
 ///////////////////////////////////////
 
 const conreolRecipes = async function () {
@@ -43,18 +48,20 @@ const conreolRecipes = async function () {
 
 const controlSearchResults = async function () {
   try {
+    resultsView.renderSpinner();
     const query = searchView.getQuery();
-
     if (!query) return;
 
     await model.loadSearchResults(query);
-    console.log(model.state.search.results);
+    // console.log(model.state.search.results);
+    resultsView.render(model.state.search.results);
   } catch (err) {
     console.error(err);
   }
 };
 const controlSearchResults2 = async function () {
   try {
+    resultsViewMobile.renderSpinner();
     // 1) get search query
     const query = searchView.getQuery2();
 
@@ -64,7 +71,8 @@ const controlSearchResults2 = async function () {
     await model.loadSearchResults(query);
 
     // 3) render results
-    console.log(model.state.search.results);
+    // console.log(model.state.search.results);
+    resultsViewMobile.render(model.state.search.results);
   } catch (err) {
     console.error(err);
   }

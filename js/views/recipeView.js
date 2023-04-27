@@ -80,13 +80,7 @@ class RecipeView extends View {
           </div>
         </div> 
      <div class="flex items-center space-x-2 p-1">
-          <button>
-            <svg
-              class="recipe__info-icon h-5 w-5 md:h-6 md:w-6 fill-green-700"
-            >
-              <use href="${icons}#icon-user"></use>
-            </svg>
-     </button>
+         
           <button class="bg-green-500 p-2 rounded-full">
             <svg
               class="recipe__info-icon h-5 w-5 md:h-6 md:w-6 stroke-white fill-green-500"
@@ -157,3 +151,11 @@ class RecipeView extends View {
 }
 
 export default new RecipeView();
+
+// {
+//   /* <button>
+//   <svg class="recipe__info-icon h-5 w-5 md:h-6 md:w-6 fill-green-700">
+//     <use href="${icons}#icon-user"></use>
+//   </svg>
+// </button>; */
+// }

@@ -3,6 +3,9 @@ import icons from "url:../../img/icons.svg";
 export default class View {
   _data;
   render(data) {
+    if (!data || (Array.isArray(data) && data.length === 0))
+      return this.renderError();
+
     this._data = data;
 
     const markUp = document.createElement("div");
@@ -16,7 +19,7 @@ export default class View {
     this._parentElement.innerHTML = "";
   }
 
-  renderSpinner = function () {
+  renderSpinner() {
     const markUp = document.createElement("div");
     markUp.innerHTML = `
      <div class="spinner mx-auto max-w-xs items-center flex justify-center animate-spin">
@@ -27,7 +30,7 @@ export default class View {
     `;
     this._parentElement.innerHTML = "";
     this._parentElement.insertAdjacentElement("afterbegin", markUp);
-  };
+  }
   renderError = function (message = this._errorMessage) {
     const markUp = document.createElement("div");
     markUp.innerHTML = `
@@ -43,22 +46,6 @@ export default class View {
     this._parentElement.innerHTML = "";
     this._parentElement.insertAdjacentElement("afterbegin", markUp);
   };
-
-  // renderError(message = this._errorMessage) {
-  //   const markUp = document.createElement("div");
-  //   markUp.innerHTML = `
-  //     <div  class="message flex space-x-2 items-center mt-10 mx-auto max-w-xs px-2 md:max-w-sm">
-  //       <div>
-  //         <svg class="h-10 w-10 fill-green-600">
-  //           <use href="${icons}#icon-alert-triangle"></use>
-  //         </svg>
-  //       </div>
-  //       <p>${message}</p>
-  //     </div>
-  //   `;
-  //   this._clear();
-  //   this._parentElement.insertAdjacentHTML("afterbegin", markUp);
-  // }
 
   renderMessage(message = this._message) {
     const markUp = document.createElement("div");
