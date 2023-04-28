@@ -27,7 +27,7 @@ export default class View {
       "h-full",
       "w-full",
       "flex",
-      "justify-center",
+      "justify-between",
       "space-x-3"
     );
     markUp.innerHTML = this._generateMarkup();
@@ -56,7 +56,7 @@ export default class View {
     markUp.innerHTML = `
     <div  class="message flex space-x-2 items-center mt-10 mx-auto max-w-xs px-2 md:max-w-sm">
       <div>
-        <svg class="h-10 w-10 fill-green-600">
+        <svg class="h-10 w-10 fill-red-600">
         <use href="${icons}#icon-alert-triangle"></use>
         </svg>
        </div>

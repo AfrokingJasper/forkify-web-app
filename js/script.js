@@ -12,9 +12,9 @@ import paginationViewMobile from "./views/paginationViewMobile.js";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-// if (module.hot) {
-//   module.hot.accept();
-// }
+if (module.hot) {
+  module.hot.accept();
+}
 
 const menuBtn = document.querySelector("#menu-btn");
 const menu = document.querySelector("#menu");
@@ -59,12 +59,13 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query);
 
     // 3) render results
-    resultsView.render(model.getSearchResultsPage(3));
+    resultsView.render(model.getSearchResultsPage());
 
     // 4 render initial pagination buttons
     paginationView.renderPagination(model.state.search);
   } catch (err) {
     console.error(err);
+    throw err;
   }
 };
 const controlSearchResults2 = async function () {
@@ -79,7 +80,7 @@ const controlSearchResults2 = async function () {
     await model.loadSearchResults(query);
 
     // 3) render results
-    resultsViewMobile.render(model.getSearchResultsPage(2));
+    resultsViewMobile.render(model.getSearchResultsPage());
 
     // 4) render initial pagination buttons
     paginationViewMobile.renderPagination(model.state.search);
@@ -106,15 +107,17 @@ const controlPaginationMobile = function (gotoPage) {
   paginationViewMobile.renderPagination(model.state.search);
 };
 
-const controlServings = function () {
+const controlServings = function (newServings) {
   // updaterecie servings (in the state)
-  model.updateServings(6);
+  model.updateServings(newServings);
 
   // update the recipe view
+  recipeView.render(model.state.recipe);
 };
 
 const init = function () {
   recipeView.addHandlerRender(conreolRecipes);
+  recipeView.addHandlerUpdateServings(controlServings);
   searchView.addHandlerSearch(controlSearchResults);
   searchView.addHandlerSearch2(controlSearchResults2);
   paginationView.addHandlerClick(controlPagination);

@@ -25,7 +25,7 @@ class PaginationViewMobile extends View {
       return `
       <button data-goto="${
         curPage + 1
-      }" class="py-1 px-3 page-btn rounded-full text-white bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200">
+      }" class="py-1 px-3 page-btn rounded-full text-white ml-auto bg-green-400 font-bold hover:bg-green-300 active:bg-green-500 duration-200">
          Page <span>${curPage + 1}</span> &rarr;
       </button>
       `;
