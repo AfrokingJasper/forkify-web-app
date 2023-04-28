@@ -98,7 +98,7 @@ export default class View {
         <use href="${icons}#icon-alert-triangle"></use>
         </svg>
        </div>
-       <p>${message}</p>
+       <p class="text-black">${message}</p>
      </div>
     `;
     this._parentElement.innerHTML = "";
@@ -116,7 +116,7 @@ export default class View {
         <use href="${icons}#icon-smile"></use>
       </svg>
     </div>
-    <p>${message}</p>
+    <p class="text-black">${message}</p>
   </div>
     `;
   }
