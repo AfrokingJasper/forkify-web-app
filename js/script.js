@@ -31,6 +31,11 @@ menuBtn.addEventListener("click", function (e) {
 const conreolRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
+
+    //
+    // resultsView.render(model.getSearchResultsPage());
+    // resultsViewMobile.render(model.getSearchResultsPage());
+
     // console.log(id);
 
     if (!id) return;
@@ -113,6 +118,7 @@ const controlServings = function (newServings) {
 
   // update the recipe view
   recipeView.render(model.state.recipe);
+  // recipeView.update(model.state.recipe);
 };
 
 const init = function () {

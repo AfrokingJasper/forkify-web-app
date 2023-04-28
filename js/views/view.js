@@ -35,6 +35,43 @@ export default class View {
     this._parentElement.insertAdjacentElement("afterbegin", markUp);
   }
 
+  // update(data) {
+  //   if (!data || (Array.isArray(data) && data.length === 0))
+  //     return this.renderError();
+
+  //   this._data = data;
+
+  //   // const newMarkUp = document.createElement("div");
+  //   // newMarkUp.classList.add("h-full");
+  //   const newMarkUp = this._generateMarkup();
+  //   const mainMarkup = newMarkUp;
+
+  //   const newDOM = document.createRange().createContextualFragment(mainMarkup);
+
+  //   const newElement = Array.from(newDOM.querySelectorAll("*"));
+
+  //   const curElements = Array.from(this._parentElement.querySelectorAll("*"));
+
+  //   newElement.forEach((newEl, i) => {
+  //     const curEl = curElements[i];
+  //     // console.log(curEl, newEl.isEqualNode(curEl));
+
+  //     if (
+  //       !newEl.isEqualNode(curEl) &&
+  //       newEl.firstChild?.nodeValue.trim() !== ""
+  //     ) {
+  //       curEl.textContent = newEl.textContent;
+  //       // console.log(newEl.firstChild.nodeValue.trim());
+  //     }
+
+  //     if (!newEl.isEqualNode(curEl)) {
+  //       Array.from(newEl.attributes).forEach((attr) =>
+  //         curEl.setAttribute(attr.name, attr.value)
+  //       );
+  //     }
+  //   });
+  // }
+
   _clear() {
     this._parentElement.innerHTML = "";
   }
@@ -51,6 +88,7 @@ export default class View {
     this._parentElement.innerHTML = "";
     this._parentElement.insertAdjacentElement("afterbegin", markUp);
   }
+
   renderError = function (message = this._errorMessage) {
     const markUp = document.createElement("div");
     markUp.innerHTML = `

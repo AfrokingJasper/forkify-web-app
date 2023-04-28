@@ -13,11 +13,15 @@ class ResultsViewMobile extends View {
   }
 
   _generateMarkupPreview(results) {
+    // const id = window.location.hash.slice(1);
+    // ${
+    //   results.id === id ? "bg-green-200" : ""
+    // }
     return `
     <li class="">
     <a
       href="#${results.id}"
-      class="flex items-center justify-between hover:scale-105 p-2 duration-700"
+      class="flex items-center  justify-between hover:scale-105 p-2 duration-700"
     >
       <div class="flex items-center justify-center space-x-3">
         <img

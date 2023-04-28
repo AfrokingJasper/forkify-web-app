@@ -13,6 +13,11 @@ class ResultsView extends View {
   }
 
   _generateMarkupPreview(results) {
+    // const id = window.location.hash.slice(1);
+    // ${
+    //   results.id === id ? "bg-green-200" : ""
+    // }
+
     return `
       <li class="">
         <a
