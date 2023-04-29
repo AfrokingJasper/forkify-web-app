@@ -152,6 +152,16 @@ const controlBookmarks = function () {
   bookmarksViewMobile.render(model.state.bookmarks);
 };
 
+const controlAddRecipe = async function (newRecipe) {
+  try {
+    // upload the new recipe data
+    await model.uploadRecipe(newRecipe);
+  } catch (err) {
+    console.error(`🛑🛑 ${err}`);
+    addRecipeView.renderError(err.message);
+  }
+};
+
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(conreolRecipes);
@@ -161,5 +171,6 @@ const init = function () {
   searchView.addHandlerSearch2(controlSearchResults2);
   paginationView.addHandlerClick(controlPagination);
   paginationViewMobile.addHandlerClick(controlPaginationMobile);
+  addRecipeView._addHandlerUpload(controlAddRecipe);
 };
 init();
