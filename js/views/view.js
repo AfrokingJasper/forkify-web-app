@@ -2,7 +2,7 @@ import icons from "url:../../img/icons.svg";
 
 export default class View {
   _data;
-  render(data) {
+  render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
 
@@ -10,8 +10,10 @@ export default class View {
 
     const markUp = document.createElement("div");
     markUp.classList.add("h-full");
-    // markUp.classList.add("w-full");
     markUp.innerHTML = this._generateMarkup();
+
+    if (!render) return markUp.innerHTML;
+
     this._clear();
     this._parentElement.insertAdjacentElement("afterbegin", markUp);
   }
