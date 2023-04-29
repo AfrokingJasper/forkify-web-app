@@ -9,7 +9,7 @@
     <title>Forkify web app</title>
   </head>
   <body
-    class="body min-h-scree bg-gradient-to-br from-green-300 to-green-700 pt- md:p-10 md:pb-20"
+    class="body relative min-h-scree bg-gradient-to-br from-green-300 to-green-700 pt- md:p-10 md:pb-20"
   >
     <div class="container mx-auto rounded-lg min-h-screen overflow-hidden">
       <header
@@ -359,6 +359,176 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- modal and overlay -->
+    <div
+      class="overlay inset-0 top-0 absolute hidden bg-black opacity-40 items-center justify-center"
+    ></div>
+    <div
+      class="hidden md:w-[80%] lg:w-[70%] mx-auto flex-col z-10 p-2 md:py-5 lg:p-10 bg-white rounded-lg fixed top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%]"
+    >
+      <form
+        class="flex flex-col w-full space-y-5 justify-center items-center relative"
+      >
+        <button class="absolute top-0 text-4xl cursor-pointer right-0">
+          &times;
+        </button>
+        <div
+          class="flex flex-col md:flex-row w-full space-y-5 md:space-y-0 md:space-x-5"
+        >
+          <!-- recipe data -->
+          <div class="flex flex-col w-full md:w-1/2 space-y-2 md:space-y-5">
+            <!-- heading -->
+            <div class="font-bold md:text-lg lg:text-2xl">RECIPE DATA</div>
+
+            <!-- inputs and labels 1 -->
+            <!-- item-1 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Title</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="text"
+                name="title"
+                value="TEST23N"
+                id=""
+              />
+            </div>
+            <!-- item 2 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">URL</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="text"
+                name="sourceUrl"
+                value="TEST23N"
+              />
+            </div>
+
+            <!-- item-3 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Image URL</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="text"
+                name="image"
+                value="TEST23N"
+              />
+            </div>
+            <!-- item 4 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Publisher </label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="text"
+                name="publisher"
+                value="TEST23N"
+              />
+            </div>
+            <!-- item 5 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Prep time</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="number"
+                required
+                name="cookingTime"
+                value="23"
+              />
+            </div>
+            <!-- item 6 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Servings</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="number"
+                required
+                name="Servings"
+                value="23"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col w-full md:w-1/2 space-y-5">
+            <!-- heading -->
+            <div class="font-bold md:text-xl lg:text-2xl">INGREDIENTS</div>
+
+            <!-- ingrideients -->
+            <!-- item-1 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Ingredient 1</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="text"
+                required
+                name="Ingredient-1"
+                value="0.5,kg,Rice"
+                placeholder="Format: 'Quantity,Unit,Description'"
+              />
+            </div>
+            <!-- item 2 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Ingredient 2</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="text"
+                name="Ingredient-2"
+                value="1,,Avocado"
+                placeholder="Format: 'Quantity,Unit,Description'"
+              />
+            </div>
+
+            <!-- item-3 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Ingredient 3</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="text"
+                name="Ingredient-3"
+                value=",,salt"
+                placeholder="Format: 'Quantity,Unit,Description'"
+              />
+            </div>
+            <!-- item 4 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Ingredient 4</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="text"
+                name="Ingredient-4"
+                placeholder="Format: 'Quantity,Unit,Description'"
+              />
+            </div>
+            <!-- item 5 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Ingredient 5</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="number"
+                name="Ingredient-5"
+                placeholder="Format: 'Quantity,Unit,Description'"
+              />
+            </div>
+            <!-- item 6 -->
+            <div class="flex flex-col md:flex-row justify-between lg:text-lg">
+              <label for="" class="md:w-1/3">Ingredient 6</label>
+              <input
+                class="border-2 border-gray-200 md:w-2/3 rounded-md"
+                type="text"
+                name="Ingredient-6"
+                placeholder="Format: 'Quantity,Unit,Description'"
+              />
+            </div>
+          </div>
+        </div>
+        <button
+          class="bg-green-600 flex items-center w-32 p-2 px-4 rounded-full space-x-2 hover:bg-green-400 duration-150"
+        >
+          <svg class="w-6 h-6 fill-white">
+            <use href="img/icons.svg#icon-upload-cloud"></use>
+          </svg>
+          <span class="font-bold text-white">UPLOAD</span>
+        </button>
+      </form>
     </div>
   </body>
 </html>

@@ -54,6 +54,8 @@ const conreolRecipes = async function () {
 
     //  2) rendering recipe
     recipeView.render(model.state.recipe);
+    bookmarksView.render(model.state.bookmarks);
+    bookmarksViewMobile.render(model.state.bookmarks);
   } catch (err) {
     recipeView.renderError();
     alert(err);
@@ -144,7 +146,13 @@ const controlAddBookmark = function () {
   bookmarksViewMobile.render(model.state.bookmarks);
 };
 
+const controlBookmarks = function () {
+  bookmarksView.render(model.state.bookmarks);
+  bookmarksViewMobile.render(model.state.bookmarks);
+};
+
 const init = function () {
+  bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(conreolRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
