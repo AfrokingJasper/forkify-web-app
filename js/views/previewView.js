@@ -30,8 +30,15 @@ class PreviewView extends View {
                 ${this._data.publisher}
               </p>
             </div>
+         
           </div>
          
+          <div class="${this._data.key ? "" : "hidden"} md:mr-5 lg:mr-10 ">
+          <svg class="w-6 h-6">
+            <use href="${icons}#icon-user"></use>
+          </svg>
+        </div>
+       
         </a>
       </li> 
     `;
@@ -39,11 +46,3 @@ class PreviewView extends View {
 }
 
 export default new PreviewView();
-
-// {
-//   /* <div class="preview__user-generated md:mr-5 lg:mr-10">
-//   <svg class="w-6 h-6">
-//     <use href="${icons}#icon-user"></use>
-//   </svg>
-// </div>; */
-// }

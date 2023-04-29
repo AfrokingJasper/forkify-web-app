@@ -121,5 +121,7 @@ export default class View {
     <p class="text-black">${message}</p>
   </div>
     `;
+    this._parentElement.innerHTML = "";
+    this._parentElement.insertAdjacentElement("afterbegin", markUp);
   }
 }
