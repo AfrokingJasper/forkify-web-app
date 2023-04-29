@@ -8,6 +8,7 @@ import resultsViewMobile from "./views/resultsViewMobile.js";
 import bookmarksViewMobile from "./views/bookmarksViewMobile.js";
 import paginationView from "./views/paginationView.js";
 import paginationViewMobile from "./views/paginationViewMobile.js";
+import addRecipeView from "./views/addRecipeView.js";
 
 // forkify web app clone 251 to be attended to
 

@@ -9,7 +9,7 @@
     <title>Forkify web app</title>
   </head>
   <body
-    class="body relative min-h-scree bg-gradient-to-br from-green-300 to-green-700 pt- md:p-10 md:pb-20"
+    class="body relative min-h-scree bg-gradient-to-br from-green-300 to-green-700 pt- md:p-10 md:pb-20 transition-all duration-500"
   >
     <div class="container mx-auto rounded-lg min-h-screen overflow-hidden">
       <header
@@ -33,7 +33,7 @@
           class="hidden md:flex flex-row items-center justify-between space-x-1 text-sm md:text-md lg:text-lg md:space-x-2 font-bold h-16"
         >
           <div
-            class="hover:bg-gray-400 h-full flex items-center duration-500 px-1"
+            class="hover:bg-gray-400 h-full open-recipe-modal cursor-pointer flex items-center duration-500 px-1"
           >
             <svg class="nav__icon h-7 w-7 fill-green-700">
               <use href="img/icons.svg#icon-edit "></use>
@@ -42,7 +42,7 @@
           </div>
           <div class="relative group h-full">
             <div
-              class="hover:bg-gray-400 bookmark h-full flex items-center transition-all duration-500 group px-1"
+              class="hover:bg-gray-400 bookmark h-full cursor-pointer flex items-center transition-all duration-500 group px-1"
             >
               <svg class="nav__icon h-7 w-7 fill-green-700">
                 <use href="img/icons.svg#icon-bookmark"></use>
@@ -363,15 +363,17 @@
 
     <!-- modal and overlay -->
     <div
-      class="overlay inset-0 top-0 absolute hidden bg-black opacity-40 items-center justify-center"
+      class="overlay inset-0 top-0 absolute hidden bg-black opacity-40 items-center justify-center transition-all duration-500"
     ></div>
     <div
-      class="hidden md:w-[80%] lg:w-[70%] mx-auto flex-col z-10 p-2 md:py-5 lg:p-10 bg-white rounded-lg fixed top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%]"
+      class="hidden recipe-window mx-auto flex-col z-10 p-2 md:py-5 transition-all duration-500 bg-white rounded-lg fixed top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] lg:p-10 lg:w-[70%] md:w-[80%]"
     >
       <form
-        class="flex flex-col w-full space-y-5 justify-center items-center relative"
+        class="flex flex-col w-full space-y-5 justify-center upload items-center relative"
       >
-        <button class="absolute top-0 text-4xl cursor-pointer right-0">
+        <button
+          class="absolute top-0 text-4xl cursor-pointer right-0 close-recipe-modal"
+        >
           &times;
         </button>
         <div
