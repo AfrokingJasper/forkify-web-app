@@ -12,8 +12,6 @@ class BookmarksView extends View {
   }
 
   _generateMarkup() {
-    console.log(this._data);
-
     return this._data
       .map((bookmark) => previewView.render(bookmark, false))
       .join("");
@@ -21,11 +19,3 @@ class BookmarksView extends View {
 }
 
 export default new BookmarksView();
-
-// {
-//   /* <div class="preview__user-generated md:mr-5 lg:mr-10">
-//   <svg class="w-6 h-6">
-//     <use href="${icons}#icon-user"></use>
-//   </svg>
-// </div>; */
-// }
